@@ -3,9 +3,9 @@
 ## 基础信息
 
 - 项目名称 / 课题：实现一个可以端到端交付全栈项目的“超级个体”
-- 团队名称：待填写
-- 成员名单：待填写（姓名 / 学校 / 专业 / 角色）
-- 分工说明：待填写（前端 / 后端 / Agent / Skill / 上下文工程 / 测试 / 部署）
+- 团队名称：Alpha-Agent
+- 成员名单：刘新泉-香港大学-个人参赛
+- 分工说明：前端 / 后端 / Agent / Skill / 上下文工程 / 测试 / 部署
 
 ## 端到端使用流程
 
@@ -26,8 +26,8 @@
 - 运行说明：见 `README.md`
 - 录屏脚本：见 `document/demo-recording-script.md`
 - P1 Demo Runbook：见 `document/p1-demo-runbook.md`
-- 演示视频链接：待填写
-- 公开仓库链接：待填写
+- 演示视频链接：https://drive.google.com/file/d/1945Hqs9i_q9GNwRZ2p4UZRCyEVkzKfpg/view?usp=sharing
+- 公开仓库链接：https://github.com/SeanLIUXQ/Alpha-Agent.git
 
 ## 系统架构图
 

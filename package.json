@@ -1,0 +1,31 @@
+{
+  "name": "alpha-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "apps/server",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @alpha-agent/server",
+    "dev:web": "npm run dev -w @alpha-agent/web",
+    "demo:p1": "node scripts/run-p1-demo.mjs",
+    "test:l3": "npm run build -w @alpha-agent/shared && npm run build -w @alpha-agent/skill-sdk && npm run build -w @alpha-agent/agent-core && node scripts/run-l3-tests.mjs",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "tsc -b packages/shared packages/model-provider packages/sandbox-runner packages/skill-sdk packages/context-engine packages/agent-core apps/server apps/web",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "db:generate": "prisma generate --schema apps/server/prisma/schema.prisma",
+    "db:push": "prisma db push --schema apps/server/prisma/schema.prisma"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  }
+}

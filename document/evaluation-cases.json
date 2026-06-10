@@ -1,0 +1,202 @@
+﻿[
+    {
+        "id":  "EVAL-L1-001",
+        "category":  "L1",
+        "level":  "L1",
+        "publicPrompt":  "在文章列表页每篇文章摘要后面显示“阅读全文”提示文案。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-read-more-hint",
+        "expectedOutcome":  "文章列表摘要展示“阅读全文”提示，不修改后端或数据库。",
+        "baseline":  {
+                         "source":  "test:l3 regression",
+                         "runId":  null,
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-read-more-hint",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  null,
+                         "repairAttempts":  0,
+                         "notes":  "回归验证动态 Skill 发现、计划、生成补丁和修复提示。历史完成 run cmq6buloe0047r7s8wfiaqji4 使用的是专用 Skill 出现前的旧注册表。"
+                     }
+    },
+    {
+        "id":  "EVAL-L1-002",
+        "category":  "L1",
+        "level":  "L1",
+        "publicPrompt":  "在文章列表卡片中显示每篇文章的标签数量。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-derived-metric",
+        "expectedOutcome":  "文章列表卡片展示基于现有 tagList 数据计算的标签数量。",
+        "baseline":  {
+                         "source":  "event-store run",
+                         "runId":  "cmq66d9s70032r7s87ieclrnz",
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-derived-metric",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  9.1,
+                         "repairAttempts":  0,
+                         "notes":  "完成 run，包含 16 个事件和 4 次模型调用。"
+                     }
+    },
+    {
+        "id":  "EVAL-L1-003",
+        "category":  "L1",
+        "level":  "L1",
+        "publicPrompt":  "在文章详情页正文下方显示本文字数和预计阅读时间。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-derived-metric",
+        "expectedOutcome":  "文章详情页基于正文展示字数和预计阅读时间。",
+        "baseline":  {
+                         "source":  "P1 demo / historical runbook",
+                         "runId":  null,
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-derived-metric",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  null,
+                         "repairAttempts":  0,
+                         "notes":  "由 P1 demo 文档覆盖；可用 POST /api/demo/l1/article-reading-stats 重新运行以获得最新耗时。"
+                     }
+    },
+    {
+        "id":  "EVAL-L2-001",
+        "category":  "L2",
+        "level":  "L2",
+        "publicPrompt":  "给文章增加 cover image 字段，编辑文章时可以填写封面图 URL，文章列表和详情页都展示封面图。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-cover-image",
+        "expectedOutcome":  "文章封面图通过数据库/API 持久化，并在编辑器、列表和详情页展示。",
+        "baseline":  {
+                         "source":  "event-store run",
+                         "runId":  "cmq6p1fg40005r7xogrg69eu3",
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-cover-image",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  11.7,
+                         "repairAttempts":  0,
+                         "notes":  "完成 run，包含 15 个事件和 4 次模型调用。"
+                     }
+    },
+    {
+        "id":  "EVAL-L2-002",
+        "category":  "L2",
+        "level":  "L2",
+        "publicPrompt":  "在文章详情页增加“复制文章链接”按钮，点击后复制当前文章 URL，并显示成功提示。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-share-link",
+        "expectedOutcome":  "文章详情页提供复制链接动作，并显示用户可见的成功反馈。",
+        "baseline":  {
+                         "source":  "event-store run",
+                         "runId":  "cmq6j2lzf0000r72sm21k4fwu",
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-share-link",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  11.1,
+                         "repairAttempts":  0,
+                         "notes":  "完成 run，包含 16 个事件和 4 次模型调用。"
+                     }
+    },
+    {
+        "id":  "EVAL-L2-003",
+        "category":  "L2",
+        "level":  "L2",
+        "publicPrompt":  "文章列表新增“仅看有封面图”的筛选开关，URL query、API 参数和数据库查询要保持一致。",
+        "expectedClarification":  true,
+        "expectedSkill":  null,
+        "expectedOutcome":  "在筛选 Skill 存在前，应追问范围和验收细节。",
+        "baseline":  {
+                         "source":  "prepared sample",
+                         "runId":  null,
+                         "clarified":  null,
+                         "matchedSkill":  null,
+                         "completed":  null,
+                         "testsPassed":  null,
+                         "durationSec":  null,
+                         "repairAttempts":  null,
+                         "notes":  "面向未来 AddFilterSkill 的公开保留用例；不计入当前通过率。"
+                     }
+    },
+    {
+        "id":  "EVAL-L3-001",
+        "category":  "L3",
+        "level":  "L3",
+        "publicPrompt":  "增加文章草稿流程：编辑器可以保存草稿或发布文章；公开列表和详情页默认只展示已发布文章；作者个人主页需要一个仅作者可见的 Drafts tab。",
+        "expectedClarification":  false,
+        "expectedSkill":  "add-article-draft-workflow",
+        "expectedOutcome":  "草稿流程覆盖持久化、API 可见性、编辑器 UI、个人主页路由和权限边界。",
+        "baseline":  {
+                         "source":  "test:l3 regression",
+                         "runId":  null,
+                         "clarified":  false,
+                         "matchedSkill":  "add-article-draft-workflow",
+                         "completed":  true,
+                         "testsPassed":  true,
+                         "durationSec":  null,
+                         "repairAttempts":  0,
+                         "notes":  "回归验证 DSL、Skill 选择、计划和跨栈补丁生成。"
+                     }
+    },
+    {
+        "id":  "EVAL-AMB-001",
+        "category":  "ambiguous",
+        "level":  null,
+        "publicPrompt":  "让这个博客变得更好。",
+        "expectedClarification":  true,
+        "expectedSkill":  null,
+        "expectedOutcome":  "系统应阻塞并追问目标页面/组件、数据来源和验收标准。",
+        "baseline":  {
+                         "source":  "event-store run",
+                         "runId":  "cmq66d92s002or7s8twgqzekg",
+                         "clarified":  true,
+                         "matchedSkill":  null,
+                         "completed":  false,
+                         "testsPassed":  null,
+                         "durationSec":  0.1,
+                         "repairAttempts":  0,
+                         "notes":  "Run 停在 requires_input，包含 6 个事件和 1 次模型调用。"
+                     }
+    },
+    {
+        "id":  "EVAL-AMB-002",
+        "category":  "ambiguous",
+        "level":  null,
+        "publicPrompt":  "优化文章卡片体验，让它更高级一点。",
+        "expectedClarification":  true,
+        "expectedSkill":  null,
+        "expectedOutcome":  "系统应追问目标页面、具体改动和成功验收方式。",
+        "baseline":  {
+                         "source":  "prepared sample",
+                         "runId":  null,
+                         "clarified":  null,
+                         "matchedSkill":  null,
+                         "completed":  null,
+                         "testsPassed":  null,
+                         "durationSec":  null,
+                         "repairAttempts":  null,
+                         "notes":  "公开模糊需求保留用例。"
+                     }
+    },
+    {
+        "id":  "EVAL-CON-001",
+        "category":  "contradictory",
+        "level":  "L2",
+        "publicPrompt":  "给文章增加封面图字段并持久化到数据库，但不要改后端，只做前端。",
+        "expectedClarification":  true,
+        "expectedSkill":  null,
+        "expectedOutcome":  "系统应识别持久化/数据库需求与纯前端约束之间的冲突。",
+        "baseline":  {
+                         "source":  "test:l3 regression",
+                         "runId":  null,
+                         "clarified":  true,
+                         "matchedSkill":  null,
+                         "completed":  false,
+                         "testsPassed":  true,
+                         "durationSec":  null,
+                         "repairAttempts":  0,
+                         "notes":  "回归断言 clarify-contradiction 和 clarify-data-contract 问题。"
+                     }
+    }
+]

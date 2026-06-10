@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Run {
+  id           String      @id @default(cuid())
+  title        String
+  status       String
+  currentStage String
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  events       RunEvent[]
+  modelCalls   ModelCall[]
+  artifacts    Artifact[]
+}
+
+model RunEvent {
+  id          String   @id @default(cuid())
+  runId       String
+  seq         Int
+  type        String
+  stage       String?
+  payloadJson String
+  createdAt   DateTime @default(now())
+  run         Run      @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@unique([runId, seq])
+  @@index([runId])
+}
+
+model ModelCall {
+  id               String   @id @default(cuid())
+  runId            String?
+  agentName        String
+  model            String
+  promptTokens     Int?
+  completionTokens Int?
+  totalTokens      Int?
+  latencyMs        Int
+  success          Boolean
+  error            String?
+  createdAt        DateTime @default(now())
+  run              Run?     @relation(fields: [runId], references: [id], onDelete: SetNull)
+}
+
+model Artifact {
+  id          String   @id @default(cuid())
+  runId       String
+  type        String
+  payloadJson String
+  createdAt   DateTime @default(now())
+  run         Run      @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+}
+
+model SkillRecord {
+  id             String   @id @default(cuid())
+  name           String   @unique
+  version        String
+  description    String?
+  capabilityTags String
+  enabled        Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Memory {
+  id          String   @id @default(cuid())
+  title       String
+  tags        String
+  payloadJson String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

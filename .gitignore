@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.vite/
+.turbo/
+
+.env
+.env.local
+.env.*.local
+
+data/*.sqlite
+data/*.sqlite-journal
+data/*.db
+*.log
+
+coverage/
+*.tsbuildinfo

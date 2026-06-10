@@ -1,0 +1,18 @@
+"use strict";
+
+const path = require("path");
+
+for (const envPath of [
+  path.resolve(__dirname, ".env"),
+  path.resolve(__dirname, "..", ".env"),
+  path.resolve(__dirname, "..", "..", "..", ".env"),
+]) {
+  require("dotenv").config({ path: envPath, override: false, quiet: true });
+}
+
+module.exports = {
+  config: path.resolve("config", "config.js"),
+  "models-path": path.resolve("models"),
+  "seeders-path": path.resolve("seeders"),
+  "migrations-path": path.resolve("migrations"),
+};

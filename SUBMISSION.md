@@ -8,9 +8,9 @@
 | 基础信息 | 团队名称与成员名单 | 待填写：见 `document/submission-details.md` |
 | 基础信息 | 分工说明（可选） | 待填写：见 `document/submission-details.md` |
 | 功能说明 | 端到端使用流程 | `document/submission-details.md#端到端使用流程` |
-| 交付材料 | 在线 Demo 链接（本地也行） | 本地默认：Workbench `http://localhost:5173`，API `http://localhost:3002`，Conduit `http://localhost:3000`；公开链接待填写 |
-| 交付材料 | 演示视频链接 | 待填写；录制脚本见 `document/demo-recording-script.md` |
-| 交付材料 | 源代码仓库链接 | 待填写；本目录包含 AI 系统主仓 + `apps/conduit-sandbox` Conduit fork 子仓源码 |
+| 交付材料 | 在线 Demo 链接（本地也行） | 本地默认：Workbench `http://localhost:5173`，API `http://localhost:3002`，Conduit `http://localhost:3000`；|
+| 交付材料 | 演示视频链接 | https://drive.google.com/file/d/1945Hqs9i_q9GNwRZ2p4UZRCyEVkzKfpg/view?usp=sharing；录制脚本见 `document/demo-recording-script.md` |
+| 交付材料 | 源代码仓库链接 | https://github.com/SeanLIUXQ/Alpha-Agent.git；本目录包含 AI 系统主仓 + `apps/conduit-sandbox` Conduit fork 子仓源码 |
 | 交付材料 | README / 运行说明 | `README.md`、`.env.example`、`apps/conduit-sandbox/.env.example`、`apps/conduit-sandbox/backend/.env.example` |
 | 技术说明 | 系统架构图 | `document/architecture.md#system-diagram` |
 | 技术说明 | 关键工程难点与解决方案 | `document/submission-details.md#关键工程难点与解决方案` |

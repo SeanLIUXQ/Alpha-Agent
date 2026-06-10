@@ -5,8 +5,8 @@
 | 字段组 | 字段 | 本仓库材料位置 / 填写内容 |
 | :-- | :-- | :-- |
 | 基础信息 | 项目名称 / 课题 | 实现一个可以端到端交付全栈项目的“超级个体” |
-| 基础信息 | 团队名称与成员名单 | 待填写：见 `document/submission-details.md` |
-| 基础信息 | 分工说明（可选） | 待填写：见 `document/submission-details.md` |
+| 基础信息 | 团队名称与成员名单 | SeanLIU：见 `document/submission-details.md` |
+| 基础信息 | 分工说明（可选） | - ：见 `document/submission-details.md` |
 | 功能说明 | 端到端使用流程 | `document/submission-details.md#端到端使用流程` |
 | 交付材料 | 在线 Demo 链接（本地也行） | 本地默认：Workbench `http://localhost:5173`，API `http://localhost:3002`，Conduit `http://localhost:3000`；|
 | 交付材料 | 演示视频链接 | https://drive.google.com/file/d/1945Hqs9i_q9GNwRZ2p4UZRCyEVkzKfpg/view?usp=sharing；录制脚本见 `document/demo-recording-script.md` |
